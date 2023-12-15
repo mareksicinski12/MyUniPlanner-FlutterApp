@@ -1,4 +1,4 @@
-# my_first_app
+# MyUniPlanner
 
 A new Flutter project.
 
