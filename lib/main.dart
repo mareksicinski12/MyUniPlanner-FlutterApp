@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:analog_clock/analog_clock.dart';
 
 
 void main() => runApp(const MaterialApp(
@@ -123,6 +124,31 @@ class _UniPlannerState extends State<UniPlanner> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    Container(
+                      height: 120.0,
+                      width: 120.0,
+                      color: Colors.grey[300],
+                      child: AnalogClock(
+                        decoration: BoxDecoration(
+                            border: Border.all(width: 2.0, color: Colors.black),
+                            color: Colors.transparent,
+                            shape: BoxShape.circle),
+                        width: 150.0,
+                        isLive: true,
+                        hourHandColor: Colors.black,
+                        minuteHandColor: Colors.black,
+                        showSecondHand: false,
+                        numberColor: Colors.black87,
+                        showNumbers: true,
+                        showAllNumbers: false,
+                        textScaleFactor: 1.4,
+                        showTicks: false,
+                        showDigitalClock: false,
+                        datetime: DateTime(2019, 1, 1, 9, 12, 15),
+                      ),
+                    ),
+
+
                   ],
                 ),
                 const SizedBox(height: 50.0),
@@ -134,92 +160,101 @@ class _UniPlannerState extends State<UniPlanner> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 20.0),
+                const SizedBox(height: 2.0),
                 Row(
                   children: <Widget>[
                     Expanded(
                       child: Container(
                         margin: EdgeInsets.symmetric(vertical: 10.0),
-                        height: 50.0,
-                        color: Colors.grey[300], // Change the color as needed
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20.0),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Line 1 Text',
-                            style: TextStyle(
-                              color: Colors.blue[900],
-                              fontSize: 16.0,
-                            ),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              // Handle button press for Line 1
-                            },
-                            child: Icon(Icons.arrow_forward),
-                          ),
-                        ],
+                        height: 3.0,
+                        color: Colors.blue[300], // Change the color as needed
                       ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 10.0),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Line 2 Text',
-                            style: TextStyle(
-                              color: Colors.blue[900],
-                              fontSize: 16.0,
+                Container(
+                  color: Colors.grey[300],
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              'Hardware Praktikum',
+                              style: TextStyle(
+                                color: Colors.blue[900],
+                                fontSize: 16.0,
+                              ),
                             ),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              // Handle button press for Line 2
-                            },
-                            child: Icon(Icons.arrow_forward),
-                          ),
-                        ],
+                            ElevatedButton(
+                              onPressed: () {
+                                // Handle button press for Line 1
+                              },
+                              child: Icon(Icons.arrow_forward),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 10.0),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Line 3 Text',
-                            style: TextStyle(
-                              color: Colors.blue[900],
-                              fontSize: 16.0,
+                Container(
+                  color: Colors.grey[300],
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              'Formale Systeme',
+                              style: TextStyle(
+                                color: Colors.blue[900],
+                                fontSize: 16.0,
+                              ),
                             ),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              // Handle button press for Line 3
-                            },
-                            child: Icon(Icons.arrow_forward),
-                          ),
-                        ],
+                            ElevatedButton(
+                              onPressed: () {
+                                // Handle button press for Line 2
+                              },
+                              child: Icon(Icons.arrow_forward),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                Container(
+                  color: Colors.grey[300],
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              'Automotive Car Safety',
+                              style: TextStyle(
+                                color: Colors.blue[900],
+                                fontSize: 16.0,
+                              ),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                // Handle button press for Line 3
+                              },
+                              child: Icon(Icons.arrow_forward),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
