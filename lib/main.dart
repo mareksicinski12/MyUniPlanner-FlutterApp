@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() => runApp(const MaterialApp(
   home: UniPlanner(),
 ));
@@ -56,7 +57,7 @@ class _UniPlannerState extends State<UniPlanner> {
         children: [
           Container(
             color: Colors.transparent,
-            child: Center(
+            child: const Center(
               child: Text(
                 'Main Content',
                 style: TextStyle(fontSize: 24),
@@ -137,7 +138,10 @@ class _UniPlannerState extends State<UniPlanner> {
           ),
         ],
       ),
+
     );
   }
 }
+
+
 
