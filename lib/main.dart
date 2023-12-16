@@ -55,15 +55,7 @@ class _UniPlannerState extends State<UniPlanner> {
       ),
       body: Stack(
         children: [
-          Container(
-            color: Colors.transparent,
-            child: const Center(
-              child: Text(
-                'Main Content',
-                style: TextStyle(fontSize: 24),
-              ),
-            ),
-          ),
+
 
           // NavigationRail
           if (_showNavigationRail)
@@ -106,7 +98,7 @@ class _UniPlannerState extends State<UniPlanner> {
                   'Personal Data',
                   style: TextStyle(
                       color: Colors.blue[900],
-                      fontSize: 16.0,
+                      fontSize: 20.0,
                       fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 10.0),
@@ -129,6 +121,102 @@ class _UniPlannerState extends State<UniPlanner> {
                       style: TextStyle(
                         color: Colors.blue[900],
                         fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 50.0),
+                Text(
+                  'My Courses',
+                  style: TextStyle(
+                    color: Colors.blue[900],
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 20.0),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 10.0),
+                        height: 50.0,
+                        color: Colors.grey[300], // Change the color as needed
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20.0),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Line 1 Text',
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Handle button press for Line 1
+                            },
+                            child: Icon(Icons.arrow_forward),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10.0),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Line 2 Text',
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Handle button press for Line 2
+                            },
+                            child: Icon(Icons.arrow_forward),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10.0),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Line 3 Text',
+                            style: TextStyle(
+                              color: Colors.blue[900],
+                              fontSize: 16.0,
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              // Handle button press for Line 3
+                            },
+                            child: Icon(Icons.arrow_forward),
+                          ),
+                        ],
                       ),
                     ),
                   ],
