@@ -93,48 +93,51 @@ class _UniPlannerState extends State<UniPlanner> {
             ),
 
           Padding(
-            padding: const EdgeInsets.fromLTRB(250.0, 50.0, 50.0, 80.0),
+            padding: const EdgeInsets.fromLTRB(250.0, 20.0, 50.0, 80.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  height: 130.0,
-                  width: 160.0,
-                  color: Colors.grey[300],
-                  child: Align(
-                    alignment: const Alignment(0.0, 0.8),
-                    child: Column(
-                        children: [
-                        const Text('Sat. 16.12.2023',
-                        style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold)),
-                     SizedBox(height: 4.0),
-                     Container(
-                      height: 80.0,
-                      width: 80.0,
-                      color: Colors.grey[300],
-                      child: AnalogClock(
-                        decoration: BoxDecoration(
-                            border: Border.all(width: 2.0, color: Colors.black),
-                            color: Colors.transparent,
-                            shape: BoxShape.circle
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Container(
+                    height: 130.0,
+                    width: 160.0,
+                    color: Colors.grey[300],
+                    child: Align(
+                      alignment: const Alignment(0.0, 0.8),
+                      child: Column(
+                          children: [
+                          const Text('Sat. 16.12.2023',
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold)),
+                       const SizedBox(height: 4.0),
+                       Container(
+                        height: 80.0,
+                        width: 80.0,
+                        color: Colors.grey[300],
+                        child: AnalogClock(
+                          decoration: BoxDecoration(
+                              border: Border.all(width: 2.0, color: Colors.black),
+                              color: Colors.transparent,
+                              shape: BoxShape.circle
+                          ),
+                          width: 150.0,
+                          isLive: true,
+                          hourHandColor: Colors.black,
+                          minuteHandColor: Colors.black,
+                          showSecondHand: false,
+                          numberColor: Colors.black87,
+                          showNumbers: true,
+                          showAllNumbers: false,
+                          textScaleFactor: 1.4,
+                          showTicks: false,
+                          showDigitalClock: false,
+                          datetime: DateTime.now(),
                         ),
-                        width: 150.0,
-                        isLive: true,
-                        hourHandColor: Colors.black,
-                        minuteHandColor: Colors.black,
-                        showSecondHand: false,
-                        numberColor: Colors.black87,
-                        showNumbers: true,
-                        showAllNumbers: false,
-                        textScaleFactor: 1.4,
-                        showTicks: false,
-                        showDigitalClock: false,
-                        datetime: DateTime.now(),
+                       ),
+                          ],
                       ),
-                     ),
-                        ],
                     ),
                   ),
                 ),
@@ -145,7 +148,7 @@ class _UniPlannerState extends State<UniPlanner> {
 
           Padding(
 
-            padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+            padding: const EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 0.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -180,7 +183,7 @@ class _UniPlannerState extends State<UniPlanner> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 50.0),
+                const SizedBox(height: 30.0),
                 Text(
                   'My Courses',
                   style: TextStyle(
@@ -202,141 +205,231 @@ class _UniPlannerState extends State<UniPlanner> {
                   ],
                 ),
                 const SizedBox(height: 10.0),
-                Container(
-                  color: Colors.grey[300],
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        color: Colors.blue[900], // Date container color
-                        padding: const EdgeInsets.fromLTRB(3.0, 0.0, 3.0, 0.0),
-                        child: const Column(
-                          children: [
-                            Text(
-                              'Mon, 1DS.',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Container(
+                    color: Colors.grey[300],
+                    child: Row(
+                      children: <Widget>[
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Container(
+                            color: Colors.blue[900], // Date container color
+                            padding: const EdgeInsets.fromLTRB(3.0, 0.0, 3.0, 0.0),
+                            child: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.co_present_outlined, size: 18.0, color: Colors.white,),
+                                    Text(
+                                      'Mon, 1DS.',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
 
-                              ),
-                            ),
-                            Icon(Icons.edit, size: 18.0, color: Colors.white,),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              'Hardware Praktikum',
-                              style: TextStyle(
-                                color: Colors.blue[900],
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                // Handle button press for Line 1
-                              },
-                              child: const Icon(Icons.arrow_forward),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 10.0),
-                Container(
-                  color: Colors.grey[300],
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        color: Colors.blue[900], // Date container color
-                        padding: const EdgeInsets.fromLTRB(3.0, 0.0, 3.0, 0.0),
-                        child: const Column(
-                          children: [
-                            Text(
-                              'Mon, 2DS.',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Icon(Icons.edit, size: 18.0, color: Colors.white,),
+                                    Text(
+                                      'APB E008',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
 
-                              ),
+                                  ],
+                                ),
+                              ],
                             ),
-                            Icon(Icons.edit, size: 18.0, color: Colors.white,),
-                          ],
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'Formale Systeme',
-                              style: TextStyle(
-                                color: Colors.blue[900],
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                // Handle button press for Line 2
-                              },
-                              child: const Icon(Icons.arrow_forward),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 10.0),
-                Container(
-                  color: Colors.grey[300],
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        color: Colors.blue[900], // Date container color
-                        padding: const EdgeInsets.fromLTRB(3.0, 0.0, 3.0, 0.0),
-                        child: const Column(
-                          children: [
-                            Text(
-                              'Mon, 3DS.',
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Text(
+                                'Hardware Praktikum',
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.blue[900],
+                                  fontSize: 16.0,
                                   fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.grey[300],
+                                ),
+                                onPressed: () {
+                                  // Handle button press for Line 3
+                                },
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Container(
+                    color: Colors.grey[300],
+                    child: Row(
+                      children: <Widget>[
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Container(
+                            color: Colors.blue[900], // Date container color
+                            padding: const EdgeInsets.fromLTRB(3.0, 0.0, 3.0, 0.0),
+                            child: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.co_present_outlined, size: 18.0, color: Colors.white,),
+                                    Text(
+                                      'Mon, 2DS.',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
 
-                              ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Icon(Icons.edit, size: 18.0, color: Colors.white,),
+                                    Text(
+                                      'APB E008',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+
+                                  ],
+                                ),
+                              ],
                             ),
-                            Icon(Icons.edit, size: 18.0, color: Colors.white,),
-                          ],
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Text(
-                              'Automotive Safety',
-                              style: TextStyle(
-                                color: Colors.blue[900],
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text(
+                                'Formale Systeme',
+                                style: TextStyle(
+                                  color: Colors.blue[900],
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            ElevatedButton(
-                              onPressed: () {
-                                // Handle button press for Line 3
-                              },
-                              child: const Icon(Icons.arrow_forward),
-                            ),
-                          ],
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.grey[300],
+                                ),
+                                onPressed: () {
+                                  // Handle button press for Line 3
+                                },
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 10.0),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: Container(
+                    color: Colors.grey[300],
+                    child: Row(
+                      children: <Widget>[
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Container(
+                            color: Colors.blue[900], // Date container color
+                            padding: const EdgeInsets.fromLTRB(3.0, 0.0, 3.0, 0.0),
+                            child: const Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.co_present_outlined, size: 18.0, color: Colors.white,),
+                                    Text(
+                                      'Mon, 3DS.',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Icon(Icons.edit, size: 18.0, color: Colors.white,),
+                                    Text(
+                                      'APB E008',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold
+                                      ),
+                                    ),
+
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text(
+                                'Automotive Safety',
+                                style: TextStyle(
+                                  color: Colors.blue[900],
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.grey[300],
+                                ),
+                                onPressed: () {
+                                  // Handle button press for Line 3
+                                },
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(height: 2.0),
@@ -351,10 +444,10 @@ class _UniPlannerState extends State<UniPlanner> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5.0),
+                const SizedBox(height: 2.0),
                 // Add calendar
                 SizedBox(
-                  height: 255,
+                  height: 282,
                   child: SingleChildScrollView(
 
                     child: TableCalendar(
