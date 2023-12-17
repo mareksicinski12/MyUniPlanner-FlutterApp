@@ -61,34 +61,29 @@ class _UniPlannerState extends State<UniPlanner> {
 
           // NavigationRail
           if (_showNavigationRail)
-            Container(
-              child: Positioned(
-                top: 0,
-                bottom: 0,
-                right: 0,
-                child: NavigationRail(
-                  destinations: const [
-                    NavigationRailDestination(
-                      icon: Icon(Icons.home),
-                      label: Text('Home'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.calendar_today),
-                      label: Text('Calendar'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.settings),
-                      label: Text('Settings'),
-                    ),
-                  ],
-                  selectedIndex: 0,
-                  onDestinationSelected: (int index) {
-                    // Handle navigation here
-                    setState(() {
-                      _showNavigationRail = false;
-                    });
-                  },
-                ),
+            Positioned(
+              top: 0,
+              bottom: 0,
+              right: 0,
+              child: NavigationRail(
+                backgroundColor: Colors.grey[200],
+                destinations: const [
+                  NavigationRailDestination(
+                    icon: Icon(Icons.home),
+                    label: Text('Home'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.settings),
+                    label: Text('Settings'),
+                  ),
+                ],
+                selectedIndex: 0,
+                onDestinationSelected: (int index) {
+                  // Handle navigation here
+                  setState(() {
+                    _showNavigationRail = false;
+                  });
+                },
               ),
             ),
 
@@ -266,7 +261,49 @@ class _UniPlannerState extends State<UniPlanner> {
                                   backgroundColor: Colors.grey[300],
                                 ),
                                 onPressed: () {
-                                  // Handle button press for Line 3
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => NextPage(
+                                        appBar: AppBar(
+                                          centerTitle: true,
+                                          backgroundColor: Colors.blue[900],
+                                          title: const Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Icon(Icons.grading_outlined, color: Colors.white,),
+
+                                              Text(
+                                                'My Exams',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          actions: [
+                                            IconButton(
+                                              icon: const Icon(Icons.home),
+                                              color: Colors.white,
+                                              onPressed: () {
+                                                setState(() {
+                                                  _showNavigationRail = !_showNavigationRail;
+                                                });
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                        examDetails: [
+                                          ExamData(
+                                              title: 'Versuch 5 ',
+                                              professor: 'Prof. Dr. Mueller',
+                                              date: '10:00, June 19, 2023'
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
                                 },
                                 child: const Icon(
                                   Icons.arrow_forward_ios,
@@ -312,7 +349,7 @@ class _UniPlannerState extends State<UniPlanner> {
                                   children: [
                                     Icon(Icons.edit, size: 18.0, color: Colors.white,),
                                     Text(
-                                      'APB E008',
+                                      'APB E007',
                                       style: TextStyle(
                                           color: Colors.white,
                                           fontWeight: FontWeight.bold
@@ -342,6 +379,49 @@ class _UniPlannerState extends State<UniPlanner> {
                                   backgroundColor: Colors.grey[300],
                                 ),
                                 onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => NextPage(
+                                        appBar: AppBar(
+                                          centerTitle: true,
+                                          backgroundColor: Colors.blue[900],
+                                          title: const Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Icon(Icons.grading_outlined, color: Colors.white,),
+
+                                              Text(
+                                                'My Exams',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          actions: [
+                                            IconButton(
+                                              icon: const Icon(Icons.home),
+                                              color: Colors.white,
+                                              onPressed: () {
+                                                setState(() {
+                                                  _showNavigationRail = !_showNavigationRail;
+                                                });
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                        examDetails: [
+                                          ExamData(
+                                              title: 'Formale Systeme',
+                                              professor: 'Prof. Dr. Ginter',
+                                              date: '9:00, February 23, 2023'
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
                                   // Handle button press for Line 3
                                 },
                                 child: const Icon(
@@ -388,7 +468,7 @@ class _UniPlannerState extends State<UniPlanner> {
                                   children: [
                                     Icon(Icons.edit, size: 18.0, color: Colors.white,),
                                     Text(
-                                      'APB E008',
+                                      'APB E006',
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.bold
@@ -418,6 +498,49 @@ class _UniPlannerState extends State<UniPlanner> {
                                   backgroundColor: Colors.grey[300],
                                 ),
                                 onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => NextPage(
+                                        appBar: AppBar(
+                                          centerTitle: true,
+                                          backgroundColor: Colors.blue[900],
+                                          title: const Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Icon(Icons.grading_outlined, color: Colors.white,),
+
+                                              Text(
+                                                'My Exams',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          actions: [
+                                            IconButton(
+                                              icon: const Icon(Icons.home),
+                                              color: Colors.white,
+                                              onPressed: () {
+                                                setState(() {
+                                                  _showNavigationRail = !_showNavigationRail;
+                                                });
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                        examDetails: [
+                                          ExamData(
+                                              title: 'Automotive Safety',
+                                              professor: 'Prof. Dr. Sicinski',
+                                              date: '11:00, June 22, 2023'
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
                                   // Handle button press for Line 3
                                 },
                                 child: const Icon(
@@ -439,7 +562,7 @@ class _UniPlannerState extends State<UniPlanner> {
                       child: Container(
                         margin: EdgeInsets.symmetric(vertical: 10.0),
                         height: 3.0,
-                        color: Colors.blue[300], // Change the color as needed
+                        color: Colors.blue[300],
                       ),
                     ),
                   ],
@@ -470,5 +593,40 @@ class _UniPlannerState extends State<UniPlanner> {
   }
 }
 
+class NextPage extends StatelessWidget {
 
+  final AppBar appBar;
+  final List<ExamData> examDetails;
 
+  NextPage({required this.appBar, required this.examDetails});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: appBar,
+      body: ListView(
+        children: examDetails.map((data) {
+          return Card(
+            child: ListTile(
+              title: Text(data.title),
+              subtitle: Text(data.professor),
+              trailing: Text(data.date),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+}
+
+class ExamData {
+  final String title;
+  final String professor;
+  final String date;
+
+  ExamData({
+    required this.title,
+    required this.professor,
+    required this.date
+  });
+}
